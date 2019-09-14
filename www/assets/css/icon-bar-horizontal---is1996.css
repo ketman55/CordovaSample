@@ -1,0 +1,27 @@
+.is-icon-bar {
+  bottom: 0;
+  position: fixed;
+  display: block;
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.search-button a {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 4vw;
+}
+
+.is-icon-bar a:hover {
+  background-color: #4CAF50;
+}
+
+.is-active {
+  background-color: #4CAF50;
+}
+

@@ -1,0 +1,24 @@
+.bs-component {
+  position: fixed;
+  display: none;
+  left: 0%;
+  top: 0%;
+  width: 95%;
+  height: 95%;
+}
+
+.bs-component .modal {
+  overflow:auto;
+  position: relative;
+  top: auto;
+  right: auto;
+  left: auto;
+  bottom: auto;
+  z-index: 1;
+  display: block;
+}
+
+.bs-component .modal-dialog {
+  width: 100%;
+}
+
