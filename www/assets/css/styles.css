@@ -21,6 +21,8 @@ Main {
   color: #212529;
   text-align: left;
   background-color: #fffafa;
+  overflow: scroll;
+  height: 100vh;
 }
 
 Footer {

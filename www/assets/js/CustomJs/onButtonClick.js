@@ -1,7 +1,13 @@
 function onButtonClick(dicType) {
+  console.log("execute onButtonClick");
+
+  // 入力欄を一番下に戻す（ブラウザ依存対応）
+  $(".is-icon-bar").css({"top": ""});
+  $(".is-icon-bar").css({"bottom": "0"});
+  
   // inputTextを取得する
   var inputText = document.getElementById("inputTextBox").value;
-  var url = "http://133.18.170.171:8080/v1/analysis?"
+  var url = "https://ketman.info/v1/analysis?"
   + "inputText=" + inputText 
   + "&dicType=" + dicType;
     
@@ -16,7 +22,16 @@ function onButtonClick(dicType) {
   } 
 
   console.log("start fetch");
-  fetch(url)
+  fetch(url,{
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "omit",
+    redirect: "follow",
+    referrerPolicy: "unsafe-url",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    }
+  })
     .then(function(response){
       if(response.ok) { // 受信成功
        console.log("success");
@@ -43,7 +58,7 @@ function onButtonClick(dicType) {
     .catch(function(error){
       console.log(error)
       var alertText = "サーバとの通信に失敗しました。"
-        + "恐れ入りますが、しばらく時間をおいてからご利用ください。";
+        + "恐れ入りますが、しばらく時間をおいてからご利用ください。"
         + "("
         + error
         + ")";
